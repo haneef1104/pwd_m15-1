@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hitung Determinan</title>
+</head>
+<body>
+
+<h2>Menghitung Determinan</h2>
+
+A : <input type="number" id="a"><br><br>
+B : <input type="number" id="b"><br><br>
+C : <input type="number" id="c"><br><br>
+
+<button onclick="hitung()">Hitung Determinan</button>
+
+<p id="hasil"></p>
+
+<script>
+function hitung() {
+    var a = document.getElementById("a").value;
+    var b = document.getElementById("b").value;
+    var c = document.getElementById("c").value;
+
+    var determinan = (b * b) - (4 * a * c);
+    var keterangan = "";
+
+    if (determinan > 0) {
+        keterangan = "Di atas garis kurva";
+    } else if (determinan == 0) {
+        keterangan = "Di garis kurva";
+    } else {
+        keterangan = "Di bawah garis kurva";
+    }
+
+    document.getElementById("hasil").innerHTML =
+        "Nilai Determinan = " + determinan + "<br>" + keterangan;
+}
+</script>
+
+</body>
+</html>
